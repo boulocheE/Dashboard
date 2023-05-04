@@ -1,0 +1,52 @@
+PARTIE DASH
+
+Le jour → titre
+Semaine du ... au ... → titre h2
+
+
+DS          SAE         A faire     Dernières modif
+---------   ---------   ---------   ---------
+|       |   |       |   |       |   |       |
+|       |   |       |   |       |   |       |
+|       |   |       |   |       |   |       |
+---------   ---------   ---------   ---------
+
+Calendrier                       Proportion boulot mois
+------------------------------   ------------
+|                            |   |          |
+|                            |   |          |
+|                            |   |          |
+|                            |   ------------
+|                            |
+|                            |   Proportion boulot semaine
+|                            |   ------------
+|                            |   |          |
+|                            |   |          |
+|                            |   |          |
+|                            |   ------------
+|                            |
+|                            |   Nombre d'heures de sport dans la semaine
+|                            |   ------------
+|                            |   |          |
+|                            |   |          |
+|                            |   |          |
+------------------------------   ------------
+
+
+
+
+
+
+
+
+
+
+
+
+PARTIE SPORT
+
+- Enregistré le sport
+- Le nombre de pas → relier à google fit si possible
+- Le nombre d'heures
+- Les exos
+- Faire un petit système d'émoji : :) :| :( pour le ressenti par sport

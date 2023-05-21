@@ -89,7 +89,7 @@ section.post-it div h2 {
 }
 
 
-section.post-it div hr {
+section.post-it hr, section.calendrier hr {
 	width : 70%;
 
 	border : none;
@@ -100,6 +100,41 @@ section.post-it div hr {
 
 
 
+li#choixPage { background : #F2F4F4; }
 li#choixPage a { color : #005656; }
 
-li#choixPage { background : #F2F4F4; }
+
+
+
+section.calendrier, section.stats {
+	float : left;
+	margin : 2% 2% 0 0 ;
+}
+
+
+section.calendrier {
+	width : 50%;
+
+	padding : 1%;
+	margin-left : 17%;
+
+	background-color: white;
+}
+
+section.stats {
+	width : 27%;
+	margin-left : 0%;
+}
+
+section.stats div {
+	margin-bottom : 5%;
+	padding : 3%;
+
+	background-color: white;
+}
+
+section.calendrier h2, section.stats h3 {
+	text-align : center;
+
+	color : #005656;
+}

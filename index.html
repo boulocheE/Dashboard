@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = 'fr'>
 
 	<head>
 		<title> WilovGym </title>
@@ -7,9 +7,9 @@
 		<meta charset = 'utf-8'>
 		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
 
-		<link rel = 'stylesheet' href = "css/index.css" media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "design/css/index.css" media = 'all' type = 'text/css'>
 
-		<script src = "js/script.js"></script>
+		<script src = "design/js/script.js"></script>
 	</head>
 
 
@@ -19,15 +19,61 @@
 			<!-- Trouver un logo pour le site -->
 
 			<!-- Menu du site -->
-			<ul>
-				<li> <a href = "design/pages/dashboard.html"      > Dashboard           </a> </li>
-				<li> <a href = "design/pages/planning.html"       > Planning            </a> </li>
-				<li> <a href = "design/pages/coursRessources.html"> Cours et ressources </a> </li>
-				<li> <a href = "design/pages/checkList.html"      > Check list          </a> </li>
-				<li> <a href = "design/pages/sport.html"          > Sport               </a> </li>
-			</ul>
+			<nav>
+				<ul>
+					<li> <a href = "design/pages/dashboard.html"      > Dashboard           </a> </li>
+					<li> <a href = "design/pages/planning.html"       > Planning            </a> </li>
+					<li> <a href = "design/pages/coursRessources.html"> Cours et ressources </a> </li>
+					<li> <a href = "design/pages/checkList.html"      > Check list          </a> </li>
+					<li> <a href = "design/pages/sport.html"          > Sport               </a> </li>
+				</ul>
+			</nav>
 		</header>
 
+
+		<hgroup>
+			<h1 id = "dateJour"  ></h1>
+			<p  id = "semaineAct"> Semaine du ... au ... MOIS (voir avec le JS) </p>
+		</hgroup>
+
+
+		<section class = "post-it">
+
+			<div id = "DS">
+				<h2> DS </h2>
+
+				<hr>
+
+				<ul id = "listeDS"></ul>
+			</div>
+
+			<div id = "SAE">
+				<h2> SAE </h2>
+
+				<hr>
+
+				<ul id = "listeSAE"></ul>
+			</div>
+
+			<div id = "checklist">
+				<h2> A faire </h2>
+
+				<hr>
+
+				<ul id = "listeAFaire"></ul>
+			</div>
+
+			<div id = "modifs">
+				<h2> Dernières modifications </h2>
+
+				<hr>
+
+				<ul id = "listeModif"></ul>
+			</div>
+
+		</section>
+
+		<hr>
 	</body>
 
 </html>

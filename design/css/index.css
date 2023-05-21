@@ -23,16 +23,19 @@ nav {
 	background : linear-gradient( #005656, #007575 );
 }
 
-nav ul { list-style : none; }
+nav ul {
+	list-style : none;
+}
 
 
 nav li {
-	text-align: center;
-	float : top;
-
 	font-weight: bold;
 
-	padding : 0 20% 20% 20%;
+	padding : 10% 0 10% 5%;
+	margin-left : 15%;
+
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
 }
 
 
@@ -94,3 +97,9 @@ section.post-it div hr {
 
 	margin-left: 15%;
 }
+
+
+
+li#choixPage a { color : #005656; }
+
+li#choixPage { background : #F2F4F4; }

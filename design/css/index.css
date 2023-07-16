@@ -176,4 +176,6 @@ section.calendrier td.jourSemaine {
 	font-weight: bold;
 }
 
+tr.jourSemaine td { border-radius: 15%; }
+
 td.jourHorsMois { color : #F2F4F4; }

@@ -119,9 +119,8 @@ function majJourCalendrier ()
 	var dateAjd = new Date();
 
 	var datePremierJourMois = new Date ( anneeActuelle, moisActuel, 01                   );
-	var dateDernierJourMois = new Date ( anneeActuelle, moisActuel, TAB_JOUR[moisActuel] );
 
-	var iPremierJour = datePremierJourMois.getDay() + 1;
+	var iPremierJour = datePremierJourMois.getDay() > 0 ? datePremierJourMois.getDay() : 7;
 	var jour = 1;
 
 
@@ -155,10 +154,10 @@ function majJourCalendrier ()
 
 	if ( datePremierJourMois.getDay() > 0 )
 	{
-		iPremierJour = datePremierJourMois.getDay();
+		iPremierJour = datePremierJourMois.getDay() - 1;
 		jour = moisActuel - 1 >= 0 ? TAB_JOUR[moisActuel - 1] : TAB_JOUR[11];
 
-		while ( iPremierJour >= 0 )
+		while ( iPremierJour > 0 )
 		{
 			var calendrierMois = document.getElementById("jour" + iPremierJour);
 			calendrierMois.textContent = jour;

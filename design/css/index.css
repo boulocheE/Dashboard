@@ -89,7 +89,7 @@ section.post-it div h2 {
 }
 
 
-section.post-it hr, section.calendrier hr {
+section.post-it hr {
 	width : 70%;
 
 	border : none;
@@ -100,8 +100,8 @@ section.post-it hr, section.calendrier hr {
 
 
 
-li#choixPage { background : #F2F4F4; }
-li#choixPage a { color : #005656; }
+li#choixPage   { background : #F2F4F4; }
+li#choixPage a { color      : #005656; }
 
 
 
@@ -113,7 +113,7 @@ section.calendrier, section.stats {
 
 
 section.calendrier {
-	width : 50%;
+	width : 37%;
 
 	padding : 1%;
 	margin-left : 17%;
@@ -122,7 +122,7 @@ section.calendrier {
 }
 
 section.stats {
-	width : 27%;
+	width : 40%;
 	margin-left : 0%;
 }
 
@@ -138,3 +138,42 @@ section.calendrier h2, section.stats h3 {
 
 	color : #005656;
 }
+
+
+
+section.calendrier table {
+	width : 100%;
+
+	border-spacing: 5px;
+}
+
+section.calendrier td {
+	width : 13%;
+	padding : 2%;
+	text-align: center;
+}
+
+
+section.calendrier td.sansStyle {
+	width : 1%;
+	border : none;
+}
+
+section.calendrier th { text-align: center; }
+
+section.calendrier th.fleche {
+	border: 1px solid black;
+	border-radius: 15px;
+
+	padding : 1%;
+}
+
+section.calendrier td.jourSemaine {
+	border : 1px solid #A2A3A3;
+
+	border-radius: 15px;
+
+	font-weight: bold;
+}
+
+td.jourHorsMois { color : #F2F4F4; }

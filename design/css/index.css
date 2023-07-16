@@ -53,7 +53,7 @@ section, hgroup { margin-left : 15%; }
 hgroup {
 	text-align : center;
 
-	padding : 2%;
+	padding : calc( 1% + 2px );
 }
 
 

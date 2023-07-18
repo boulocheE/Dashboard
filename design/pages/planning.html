@@ -36,21 +36,16 @@
 			<h2> Planning </h2>
 
 			<!-- <div id = "choixAffichage" >
-				<button> Jour    </button>
-				<button> Semaine </button>
-				<button> Mois    </button>
+				<input> Jour    </input>
+				<input> Semaine </input>
+				<input> Mois    </input>
 			</div> -->
 
 			<div id = "dateActuelle">
-				<button> Mois Actuel    </button>
-				<button> Année Actuelle </button>
-				<button> &lt; </button>
-				<button> &gt; </button>
+				<input type = "button" id = "mois"    value = "mois" >
+				<input type = "button" id = "flecheG" value = "&lt;" onclick = "majMoisCalendrier(-1)" >
+				<input type = "button" id = "flecheD" value = "&gt;" onclick = "majMoisCalendrier( 1)" >
 			</div>
-		</section>
-
-		<section id = "datePlanning">
-				
 		</section>
 
 
@@ -67,78 +62,83 @@
 
 				<thead>
 					<tr id = "jourSemaine">
-						<th> <div>Lundi   </div> </th>
-						<th> Mardi    </th>
-						<th> Mercredi </th>
-						<th> Jeudi    </th>
-						<th> Vendredi </th>
-						<th> Samedi   </th>
-						<th> Dimanche </th>
+						<th id = "j1"> Lundi    </th>
+						<th id = "j2"> Mardi    </th>
+						<th id = "j3"> Mercredi </th>
+						<th id = "j4"> Jeudi    </th>
+						<th id = "j5"> Vendredi </th>
+						<th id = "j6"> Samedi   </th>
+						<th id = "j0"> Dimanche </th>
 					</tr>
 				</thead>
 
 				<tbody>
 					<tr>
-						<td id = "jour1" ></td>
-						<td id = "jour2" ></td>
-						<td id = "jour3" ></td>
-						<td id = "jour4" ></td>
-						<td id = "jour5" ></td>
-						<td id = "jour6" ></td>
-						<td id = "jour7" ></td>
+						<td id = "jour1" > <div> </div> </td>
+						<td id = "jour2" > <div> </div> </td>
+						<td id = "jour3" > <div> </div> </td>
+						<td id = "jour4" > <div> </div> </td>
+						<td id = "jour5" > <div> </div> </td>
+						<td id = "jour6" > <div> </div> </td>
+						<td id = "jour7" > <div> </div> </td>
 					</tr>
 
 					<tr>
-						<td id = "jour8" ></td>
-						<td id = "jour9" ></td>
-						<td id = "jour10"></td>
-						<td id = "jour11"></td>
-						<td id = "jour12"></td>
-						<td id = "jour13"></td>
-						<td id = "jour14"></td>
+						<td id = "jour8" > <div> </div> </td>
+						<td id = "jour9" > <div> </div> </td>
+						<td id = "jour10"> <div> </div> </td>
+						<td id = "jour11"> <div> </div> </td>
+						<td id = "jour12"> <div> </div> </td>
+						<td id = "jour13"> <div> </div> </td>
+						<td id = "jour14"> <div> </div> </td>
 					</tr>
 
 					<tr>
-						<td id = "jour15"></td>
-						<td id = "jour16"></td>
-						<td id = "jour17"></td>
-						<td id = "jour18"></td>
-						<td id = "jour19"></td>
-						<td id = "jour20"></td>
-						<td id = "jour21"></td>
+						<td id = "jour15"> <div> </div> </td>
+						<td id = "jour16"> <div> </div> </td>
+						<td id = "jour17"> <div> </div> </td>
+						<td id = "jour18"> <div> </div> </td>
+						<td id = "jour19"> <div> </div> </td>
+						<td id = "jour20"> <div> </div> </td>
+						<td id = "jour21"> <div> </div> </td>
 					</tr>
 
 					<tr>
-						<td id = "jour22"></td>
-						<td id = "jour23"></td>
-						<td id = "jour24"></td>
-						<td id = "jour25"></td>
-						<td id = "jour26"></td>
-						<td id = "jour27"></td>
-						<td id = "jour28"></td>
+						<td id = "jour22"> <div> </div> </td>
+						<td id = "jour23"> <div> </div> </td>
+						<td id = "jour24"> <div> </div> </td>
+						<td id = "jour25"> <div> </div> </td>
+						<td id = "jour26"> <div> </div> </td>
+						<td id = "jour27"> <div> </div> </td>
+						<td id = "jour28"> <div> </div> </td>
 					</tr>
 
 					<tr>
-						<td id = "jour29"></td>
-						<td id = "jour30"></td>
-						<td id = "jour31"></td>
-						<td id = "jour32"></td>
-						<td id = "jour33"></td>
-						<td id = "jour34"></td>
-						<td id = "jour35"></td>
+						<td id = "jour29"> <div> </div> </td>
+						<td id = "jour30"> <div> </div> </td>
+						<td id = "jour31"> <div> </div> </td>
+						<td id = "jour32"> <div> </div> </td>
+						<td id = "jour33"> <div> </div> </td>
+						<td id = "jour34"> <div> </div> </td>
+						<td id = "jour35"> <div> </div> </td>
 					</tr>
 
 					<tr>
-						<td id = "jour36"></td>
-						<td id = "jour37"></td>
-						<td id = "jour38"></td>
-						<td id = "jour39"></td>
-						<td id = "jour40"></td>
-						<td id = "jour41"></td>
-						<td id = "jour42"></td>
+						<td id = "jour36"> <div> </div> </td>
+						<td id = "jour37"> <div> </div> </td>
+						<td id = "jour38"> <div> </div> </td>
+						<td id = "jour39"> <div> </div> </td>
+						<td id = "jour40"> <div> </div> </td>
+						<td id = "jour41"> <div> </div> </td>
+						<td id = "jour42"> <div> </div> </td>
 					</tr>
 				</tbody>
 			</table>
+		</section>
+
+
+		<section id = "parametres">
+			
 		</section>
 
 	</body>

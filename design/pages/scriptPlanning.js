@@ -28,7 +28,7 @@ function majDate (date, ajout)
 	var mois  = date.getMonth() + 0;
 	var annee = date.getFullYear();
 
-	let eDateCorrecte = jour > 0 && jour <= TAB_JOUR[date.getMonth()];
+	var eDateCorrecte = jour > 0 && jour <= TAB_JOUR[date.getMonth()];
 
 	while ( !eDateCorrecte )
 	{
@@ -64,7 +64,7 @@ function majMoisCalendrier ( ecart )
 	moisActuel    += ecart;
 
 
-	let eMoisCorrect = moisActuel >= 0 && moisActuel < 12;
+	var eMoisCorrect = moisActuel >= 0 && moisActuel < 12;
 
 	while ( !eMoisCorrect )
 	{
@@ -84,10 +84,6 @@ function majMoisCalendrier ( ecart )
 	}
 
 
-	// var calendrierMois = document.getElementById("mois");
-	// calendrierMois.textContent = TAB_MOIS[moisActuel].toUpperCase() + " " + anneeActuelle;
-
-
 	// Calendrier → mis à jour jours
 	majJourCalendrier();
 
@@ -105,8 +101,35 @@ function majMoisCalendrier ( ecart )
 	for ( let cpt = 1; cpt <= 42; cpt ++ )
 	{
 		var jourCalendrier = document.getElementById("jour" + cpt);
-		jourCalendrier.style.height = ( hauteurPage - hauteurMenu - hauteurJour - 30 ) / 6 + 'px';
+		jourCalendrier.style.height = ( hauteurPage - hauteurMenu - hauteurJour - 20 ) / 6 + 'px';
 	}
+
+
+
+
+	var calendrierMois;
+	var celluvarab        = document.getElementById("jour1");
+	var tailleCelluvarabW = celluvarab.offsetWidth;
+
+	calendrierMois = document.getElementById("mois");
+	calendrierMois.value = TAB_MOIS[moisActuel].toUpperCase() + " " + anneeActuelle;
+	calendrierMois.style.width = (tailleCelluvarabW + 5) + "px";
+	calendrierMois.style.marginLeft = ( tailleCelluvarabW - calendrierMois.offsetWidth + 20 ) + tailleCelluvarabW / 2 + "px";
+
+
+	var fleche;
+	var hauteurFleche;
+
+	fleche        = document.getElementById("flecheG");
+	hauteurFleche = fleche.offsetHeight + "px";
+
+	fleche.style.width = hauteurFleche;
+	fleche.style.marginLeft = tailleCelluvarabW / 2 + ( tailleCelluvarabW - calendrierMois.offsetWidth + 5 ) + "px";
+
+	fleche = document.getElementById("flecheD");
+	fleche.style.width = hauteurFleche;
+	fleche.style.marginLeft = "2%";
+
 }
 
 
@@ -115,7 +138,7 @@ function majJourCalendrier ()
 {
 	var dateAjd = new Date();
 
-	var datePremierJourMois = new Date ( anneeActuelle, moisActuel, 01                   );
+	var datePremierJourMois = new Date ( anneeActuelle, moisActuel, 01 );
 
 	var iPremierJour = datePremierJourMois.getDay() > 0 ? datePremierJourMois.getDay() : 7;
 	var jour = 1;
@@ -123,15 +146,13 @@ function majJourCalendrier ()
 
 	while ( jour <= TAB_JOUR[moisActuel] )
 	{
-		let calendrierMois = document.getElementById("jour" + iPremierJour);
+		var calendrierMois = document.getElementById("jour" + iPremierJour);
 
-		let divJours       = document.createElement("div");
-		divJours.innerHTML = jour;
+		var divJours       = calendrierMois.querySelector("div");
 
-		calendrierMois.appendChild(divJours);
-
-		divJours.style.color      = "black";
+		divJours.textContent      = jour;
 		divJours.style.background = "white";
+		divJours.style.color      = "black";
 
 		if ( jour == dateAjd.getDate() && moisActuel == dateAjd.getMonth() && anneeActuelle == dateAjd.getFullYear() )
 		{
@@ -147,14 +168,12 @@ function majJourCalendrier ()
 
 	for ( let i = iPremierJour; i <= 42; i ++ )
 	{
-		let calendrierMois = document.getElementById("jour" + i);
+		calendrierMois = document.getElementById("jour" + i);
+		divJours       = calendrierMois.querySelector("div");
 
-		let divJours       = document.createElement("div");
-
-		divJours.innerHTML   = jourMoisSuivant;
+		divJours.textContent = jourMoisSuivant;
 		divJours.style.color = "#A2A3A3";
 
-		calendrierMois.appendChild(divJours);
 
 		jourMoisSuivant ++;
 	}
@@ -166,14 +185,11 @@ function majJourCalendrier ()
 
 		while ( iPremierJour > 0 )
 		{
-			let calendrierMois = document.getElementById("jour" + iPremierJour);
+			var calendrierMois = document.getElementById("jour" + iPremierJour);
+			divJours       = calendrierMois.querySelector("div");
 
-			let divJours       = document.createElement("div");
-
-			divJours.innerHTML = jour;
+			divJours.textContent = jour;
 			divJours.style.color = "#A2A3A3";
-
-			calendrierMois.appendChild(divJours);
 
 			iPremierJour --;
 			jour --;
@@ -186,7 +202,7 @@ function majJourCalendrier ()
 		calendrierMois = document.getElementById("jour" + i);
 		var taille     = calendrierMois.offsetHeight - calendrierMois.offsetHeight / 3;
 
-		calendrierMois.style.margin = "5px 0 taille 0";
+		calendrierMois.style.margin = "5px 0 " + taille + " 0";
 	}
 
 }
@@ -196,4 +212,4 @@ function majStyleCalendrier ()
 {
 	var tailleMenu = document.getElementById('maDiv');;
 	tailleMenu = tailleMenu.offsetHeight;
-}	
+}

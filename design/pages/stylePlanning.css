@@ -1,0 +1,51 @@
+table { width : 70%; }
+
+td
+{
+	width      : 10%;
+	text-align : center;
+}
+
+.fleche
+{
+	background-color: white;
+}
+
+#menuPlanning {
+	width : 85%;
+}
+
+button {
+	width : 15%;
+
+	border : none;
+
+	padding : 1%;
+	margin : 0 0 1% 1%;
+
+	background : rgba(0, 86, 86, 0.2);
+
+	border-radius: 15px;
+}
+
+h2 {
+	font-size : 215%;
+
+	text-align : center;
+
+	padding : calc( 1% + 2px );
+}
+
+thead th { padding : 15px 0 10px 0; }
+
+td { position : relative; }
+td div {
+	width : 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-left : calc( 50% - 25px / 2 );
+	padding : 2px;
+	text-align: center;
+	position : absolute;
+	top : 0;
+	left : 0; }

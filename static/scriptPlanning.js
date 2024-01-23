@@ -5,6 +5,9 @@ const TAB_MOIS    = [ 'Janvier', 'Février' , 'Mars'     , 'Avril'  , 'Mai'     
 
 const TAB_JOUR    = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
+var moisAffiche;
+var anneeAffichee;
+
 var moisActuel;
 var anneeActuelle;
 
@@ -14,9 +17,11 @@ window.addEventListener('load', function ()
 	var date = new Date();
 
 	// Calendrier → mis à jour mois
+	moisAffiche    = date.getMonth();
+	anneeAffichee = date.getFullYear();
+
 	moisActuel    = date.getMonth();
 	anneeActuelle = date.getFullYear();
-
 	majMoisCalendrier( 0 );
 })
 
@@ -61,24 +66,24 @@ function majDate (date, ajout)
 
 function majMoisCalendrier ( ecart )
 {
-	moisActuel    += ecart;
+	moisAffiche    += ecart;
 
 
-	var eMoisCorrect = moisActuel >= 0 && moisActuel < 12;
+	var eMoisCorrect = moisAffiche >= 0 && moisAffiche < 12;
 
 	while ( !eMoisCorrect )
 	{
-		if ( moisActuel < 0 )
+		if ( moisAffiche < 0 )
 		{
-			moisActuel += 12;
-			anneeActuelle --;
+			moisAffiche += 12;
+			anneeAffichee --;
 			eMoisCorrect = true;
 		}
 
-		if ( moisActuel >= 12 )
+		if ( moisAffiche >= 12 )
 		{
-			moisActuel -= 12;
-			anneeActuelle ++;
+			moisAffiche -= 12;
+			anneeAffichee ++;
 			eMoisCorrect = true;
 		}
 	}
@@ -112,7 +117,7 @@ function majMoisCalendrier ( ecart )
 	var tailleCelluvarabW = celluvarab.offsetWidth;
 
 	calendrierMois = document.getElementById("mois");
-	calendrierMois.value = TAB_MOIS[moisActuel].toUpperCase() + " " + anneeActuelle;
+	calendrierMois.value = TAB_MOIS[moisAffiche].toUpperCase() + " " + anneeAffichee;
 	calendrierMois.style.width = (tailleCelluvarabW + 5) + "px";
 	calendrierMois.style.marginLeft = ( tailleCelluvarabW - calendrierMois.offsetWidth + 20 ) + tailleCelluvarabW / 2 + "px";
 
@@ -129,7 +134,6 @@ function majMoisCalendrier ( ecart )
 	fleche = document.getElementById("flecheD");
 	fleche.style.width = hauteurFleche;
 	fleche.style.marginLeft = "2%";
-
 }
 
 
@@ -138,13 +142,13 @@ function majJourCalendrier ()
 {
 	var dateAjd = new Date();
 
-	var datePremierJourMois = new Date ( anneeActuelle, moisActuel, 01 );
+	var datePremierJourMois = new Date ( anneeAffichee, moisAffiche, 01 );
 
 	var iPremierJour = datePremierJourMois.getDay() > 0 ? datePremierJourMois.getDay() : 7;
 	var jour = 1;
 
 
-	while ( jour <= TAB_JOUR[moisActuel] )
+	while ( jour <= TAB_JOUR[moisAffiche] )
 	{
 		var calendrierMois = document.getElementById("jour" + iPremierJour);
 
@@ -154,7 +158,7 @@ function majJourCalendrier ()
 		divJours.style.background = "white";
 		divJours.style.color      = "black";
 
-		if ( jour == dateAjd.getDate() && moisActuel == dateAjd.getMonth() && anneeActuelle == dateAjd.getFullYear() )
+		if ( jour == dateAjd.getDate() && moisAffiche == dateAjd.getMonth() && anneeAffichee == dateAjd.getFullYear() )
 		{
 			divJours.style.background = "#005656";
 			divJours.style.color      = "white";
@@ -181,7 +185,7 @@ function majJourCalendrier ()
 	if ( datePremierJourMois.getDay() > 0 )
 	{
 		iPremierJour = datePremierJourMois.getDay() - 1;
-		jour = moisActuel - 1 >= 0 ? TAB_JOUR[moisActuel - 1] : TAB_JOUR[11];
+		jour = moisAffiche - 1 >= 0 ? TAB_JOUR[moisAffiche - 1] : TAB_JOUR[11];
 
 		while ( iPremierJour > 0 )
 		{
@@ -212,4 +216,69 @@ function majStyleCalendrier ()
 {
 	var tailleMenu = document.getElementById('maDiv');;
 	tailleMenu = tailleMenu.offsetHeight;
+}
+
+
+function actualiser()
+{
+	majMoisCalendrier((anneeActuelle - anneeAffichee) * 12 + moisActuel - moisAffiche);
+}
+
+
+
+function affichage( type )
+{
+	var tabJour = document.getElementById("affichageJour");
+	var tabMois = document.getElementById("affichageMois");
+	var tabAnnee = document.getElementById("affichageAnnee");
+
+	tabJour .style.display = "none";
+	tabMois .style.display = "none";
+	tabAnnee.style.display = "none";
+
+
+
+	// Change la couleurs des boutons selon la demande de l'utilisateur
+	var btnJour = document.getElementById("btnJour");
+	btnJour.style.background = "#FFFFFF";
+	btnJour.style.color      = "#A2A3A3";
+	btnJour.style.width      = "25%";
+
+	var btnMois = document.getElementById("btnMois");
+	btnMois.style.background = "#FFFFFF";
+	btnMois.style.color      = "#A2A3A3";
+	btnMois.style.width      = "25%";
+
+	var btnAnnee = document.getElementById("btnAnnee");
+	btnAnnee.style.background = "#FFFFFF";
+	btnAnnee.style.color      = "#A2A3A3";
+	btnAnnee.style.width      = "25%";
+
+
+
+	// Affiche le calendrier demander
+	var choixAffichageTab;
+	var choixAffichageBtn;
+	switch (type) {
+		case 1 :
+			choixAffichageTab = tabJour;
+			choixAffichageBtn = btnJour;
+			break;
+
+		case 2 :
+			choixAffichageTab = tabMois;
+			choixAffichageBtn = btnMois;
+			break;
+
+		case 3 :
+			choixAffichageTab = tabAnnee;
+			choixAffichageBtn = btnAnnee;
+			break;
+	}
+
+	choixAffichageTab.style.display = "block";
+	choixAffichageBtn.style.background = "#005656";
+	choixAffichageBtn.style.color      = "#FFFFFF";
+	choixAffichageBtn.style.width      = "calc( 45% + 4% / 2 )";
+
 }

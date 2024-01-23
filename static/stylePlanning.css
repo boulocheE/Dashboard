@@ -1,4 +1,4 @@
-table { width : 70%; }
+/* table { width : 70%; } */
 
 td
 {
@@ -11,11 +11,9 @@ td
 	background-color: white;
 }
 
-#menuPlanning { width : 85%; }
+#menuPlanning { width : calc( 60% + 50px ); }
 
 input {
-	/* width : 15%; */
-
 	border : none;
 
 	padding : 10px;
@@ -70,10 +68,54 @@ td div {
 
 table {
 	margin-left : 1%;
-	border-collapse: collapse;
+	border-collapse : collapse;
+	width : calc(100% - 1% - 23% - 50px);
 }
 
 tbody { background-color: white; }
 
 
 #flecheG, #flecheD { border-radius: 50%; }
+
+#parametres {
+	position : fixed;
+	top : 0;
+	right : 0;
+	bottom : 0;
+
+	width : calc( 23% - 50px );
+
+	border-left : solid 1px #005656;
+
+	padding : 1%;
+}
+
+
+.gererAffichage {
+	margin-left : 0;
+
+	width : 100%;
+}
+
+.gererAffichage input {
+	background : white;
+
+	border : solid 1px #005656;
+
+	color : #A2A3A3;
+
+	width : 25%;
+
+	margin : 0%;
+}
+
+.gererAffichage input#btnMois {
+	background : #005656;
+	color : white;
+	width: calc( 45% + 4% / 2 );
+}
+
+
+h3 { color : #A2A3A3; }
+
+#calendrierJour { display : "none"; }

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang = 'fr'>
+
+	<head>
+		<title> Dashboard </title>
+
+		<meta charset = 'utf-8'>
+		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
+
+		<link rel = 'stylesheet' href = "../css/index.css"  media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "stylePlanning.css" media = 'all' type = 'text/css'>
+
+		<script src = "scriptPlanning.js"></script>
+	</head>
+
+
+	<body>
+
+		<header>
+			<!-- Trouver un logo pour le site -->
+
+			<!-- Menu du site -->
+			<nav>
+				<ul>
+					<li                 > <a href = "../../index.html"     > Dashboard           </a> </li>
+					<li id = "choixPage"> <a href = "planning.html"        > Planning            </a> </li>
+					<li                 > <a href = "coursRessources.html" > Cours et ressources </a> </li>
+					<li                 > <a href = "checkList.html"       > Check list          </a> </li>
+					<li                 > <a href = "sport.html"           > Sport               </a> </li>
+					<li                 > <a href = "recettes.html"        > Recettes            </a> </li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<section id = "menuPlanning">
+			<h2 id = 't'> Planning </h2>
+
+			<div id = "dateActuelle">
+				<input type = "button" id = "mois"    value = "mois" onclick= "actualiser()" >
+				<input type = "button" id = "flecheG" value = "&lt;" onclick = "majMoisCalendrier(-1)" >
+				<input type = "button" id = "flecheD" value = "&gt;" onclick = "majMoisCalendrier( 1)" >
+			</div>
+		</section>
+
+
+		<section id = "affichageMois">
+
+			<table>
+				<thead>
+					<tr id = "jourSemaine">
+						<td id = "j1"> Lundi    </td>
+						<td id = "j2"> Mardi    </td>
+						<td id = "j3"> Mercredi </td>
+						<td id = "j4"> Jeudi    </td>
+						<td id = "j5"> Vendredi </td>
+						<td id = "j6"> Samedi   </td>
+						<td id = "j0"> Dimanche </td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td id = "jour1" > <div> </div> </td>
+						<td id = "jour2" > <div> </div> </td>
+						<td id = "jour3" > <div> </div> </td>
+						<td id = "jour4" > <div> </div> </td>
+						<td id = "jour5" > <div> </div> </td>
+						<td id = "jour6" > <div> </div> </td>
+						<td id = "jour7" > <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "jour8" > <div> </div> </td>
+						<td id = "jour9" > <div> </div> </td>
+						<td id = "jour10"> <div> </div> </td>
+						<td id = "jour11"> <div> </div> </td>
+						<td id = "jour12"> <div> </div> </td>
+						<td id = "jour13"> <div> </div> </td>
+						<td id = "jour14"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "jour15"> <div> </div> </td>
+						<td id = "jour16"> <div> </div> </td>
+						<td id = "jour17"> <div> </div> </td>
+						<td id = "jour18"> <div> </div> </td>
+						<td id = "jour19"> <div> </div> </td>
+						<td id = "jour20"> <div> </div> </td>
+						<td id = "jour21"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "jour22"> <div> </div> </td>
+						<td id = "jour23"> <div> </div> </td>
+						<td id = "jour24"> <div> </div> </td>
+						<td id = "jour25"> <div> </div> </td>
+						<td id = "jour26"> <div> </div> </td>
+						<td id = "jour27"> <div> </div> </td>
+						<td id = "jour28"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "jour29"> <div> </div> </td>
+						<td id = "jour30"> <div> </div> </td>
+						<td id = "jour31"> <div> </div> </td>
+						<td id = "jour32"> <div> </div> </td>
+						<td id = "jour33"> <div> </div> </td>
+						<td id = "jour34"> <div> </div> </td>
+						<td id = "jour35"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "jour36"> <div> </div> </td>
+						<td id = "jour37"> <div> </div> </td>
+						<td id = "jour38"> <div> </div> </td>
+						<td id = "jour39"> <div> </div> </td>
+						<td id = "jour40"> <div> </div> </td>
+						<td id = "jour41"> <div> </div> </td>
+						<td id = "jour42"> <div> </div> </td>
+					</tr>
+				</tbody>
+			</table>
+
+		</section>
+
+
+		<section id = "affichageJour">
+			<table>
+				<thead>
+					<tr class = "jourSemaine">
+						<td id = "jh1"> Lundi    </td>
+						<td id = "jh2"> Mardi    </td>
+						<td id = "jh3"> Mercredi </td>
+						<td id = "jh4"> Jeudi    </td>
+						<td id = "jh5"> Vendredi </td>
+						<td id = "jh6"> Samedi   </td>
+						<td id = "jh0"> Dimanche </td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td id = "heure1" > <div> </div> </td>
+						<td id = "heure2" > <div> </div> </td>
+						<td id = "heure3" > <div> </div> </td>
+						<td id = "heure4" > <div> </div> </td>
+						<td id = "heure5" > <div> </div> </td>
+						<td id = "heure6" > <div> </div> </td>
+						<td id = "heure7" > <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "heure8" > <div> </div> </td>
+						<td id = "heure9" > <div> </div> </td>
+						<td id = "heure10"> <div> </div> </td>
+						<td id = "heure11"> <div> </div> </td>
+						<td id = "heure12"> <div> </div> </td>
+						<td id = "heure13"> <div> </div> </td>
+						<td id = "heure14"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "heure15"> <div> </div> </td>
+						<td id = "heure16"> <div> </div> </td>
+						<td id = "heure17"> <div> </div> </td>
+						<td id = "heure18"> <div> </div> </td>
+						<td id = "heure19"> <div> </div> </td>
+						<td id = "heure20"> <div> </div> </td>
+						<td id = "heure21"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "heure22"> <div> </div> </td>
+						<td id = "heure23"> <div> </div> </td>
+						<td id = "heure24"> <div> </div> </td>
+						<td id = "heure25"> <div> </div> </td>
+						<td id = "heure26"> <div> </div> </td>
+						<td id = "heure27"> <div> </div> </td>
+						<td id = "heure28"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "heure29"> <div> </div> </td>
+						<td id = "heure30"> <div> </div> </td>
+						<td id = "heure31"> <div> </div> </td>
+						<td id = "heure32"> <div> </div> </td>
+						<td id = "heure33"> <div> </div> </td>
+						<td id = "heure34"> <div> </div> </td>
+						<td id = "heure35"> <div> </div> </td>
+					</tr>
+				
+					<tr>
+						<td id = "heure36"> <div> </div> </td>
+						<td id = "heure37"> <div> </div> </td>
+						<td id = "heure38"> <div> </div> </td>
+						<td id = "heure39"> <div> </div> </td>
+						<td id = "heure40"> <div> </div> </td>
+						<td id = "heure41"> <div> </div> </td>
+						<td id = "heure42"> <div> </div> </td>
+					</tr>
+			</table>
+		</section>
+
+		<section id = "affichageAnnee">
+
+		</section>
+
+
+		<section id = "parametres">
+			<div>
+				<h3> > AFFICHAGE </h3>
+
+				<section class = "gererAffichage">
+					<input type = "button" id = "btnJour"  value = "Jour"  onclick = "affichage(1)" >
+					<input type = "button" id = "btnMois"  value = "Mois"  onclick = "affichage(2)" >
+					<input type = "button" id = "btnAnnee" value = "Annee" onclick = "affichage(3)" >
+				</section>
+			</div>
+
+			<div>
+				<h3> > CATÉGORIE DES ÉVÈNEMENT </h3>
+			</div>
+
+			<div>
+				<h3> > CRÉATION ÉVÈNEMENT </h3>
+			</div>
+		</section>
+
+	</body>
+
+</html>

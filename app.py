@@ -14,23 +14,23 @@ def index() :
 	return render_template('index.html')
 
 @app.route('/pages/CheckList')
-def pageCheckList() :
+def checkList() :
 	return render_template('pages/checkList.html')
 
 @app.route('/pages/coursRessources')
-def pageCoursRessources() :
+def coursRessources() :
 	return render_template('pages/coursRessources.html')
 
 @app.route('/pages/planning')
-def pagePlanning() :
+def planning() :
 	return render_template('pages/planning.html')
 
 @app.route('/pages/recettes')
-def pageRecettes() :
+def recettes() :
 	return render_template('pages/recettes.html')
 
 @app.route('/pages/sport')
-def pageSport() :
+def sport() :
 	return render_template('pages/sport.html')
 
 

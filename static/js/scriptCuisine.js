@@ -12,3 +12,14 @@ function choixPage ( event, pageActuelle, pageSuivante, menu1, menu2 ) {
 	menu2 = document.getElementById( menu2 );
 	menu2.classList.add("choix");
 }
+
+
+function choixModifRecettesAction(event, id) {
+	const tabIdFormulaires = ['formAjoutRecette', 'formSupprimerRecette', 'formModifierRecette'];
+
+	document.getElementById(tabIdFormulaires[id]).style.display = 'block';
+
+	for (var cpt = 0; cpt < tabIdFormulaires.length; cpt++)
+		if ( cpt != id )
+			document.getElementById(tabIdFormulaires[cpt]).style.display = 'none';
+}

@@ -69,68 +69,96 @@
 
 
 
+
+		
+
+
 		<div id = "modificationRecettes">
 			<div>
-				<input type = "radio" name = "choixModification" checked>
+
+				<!-- --------------------- -->
+				<!--    AJOUTER RECETTE    -->
+				<!-- --------------------- -->
+				<input type    = "radio"
+				       name    = "choixModification"
+				       id      = "ajoutRecette"
+				       onclick = "choixModifRecettesAction( event, 0 )"
+				       checked>
 	
 				<label> Ajouter une recette </label>
+
+
+				<form id = "formAjoutRecette">
+
+					<div>
+						<label> Nom de la recette </label>
+						<input type = 'text'>
+					</div>
+		
+		
+					<div>
+						<label> Catégorie de la recette </label>
+		
+						<select name = "categorie" id = "catRecette">
+							<option value = "soupe"                             > Soupe   </option>
+							<option value = "entrée"                            > Entrée  </option>
+							<option value = "plat"                              > Plat    </option>
+							<option value = "dessert"                           > Dessert </option>
+							<option value = "autre"  onclick = "newCatRecette()"> Autre   </option>
+						</select>
+					</div>
+		
+		
+					<table>
+						<thead>
+							<tr>
+								<th> Nom ingrédient    </th>
+								<th> Quantité          </th>
+								<th> Commentaire       </th>
+								<th> Suppression ligne </th>
+							</tr>
+						</thead>
+		
+						<tbody>
+							<tr>
+								<td> <input type = "text"> </td>
+								<td> <input type = "text"> </td>
+								<td> <input type = "text"> </td>
+								<td> <button> Supprimer </button> </td>
+							</tr>
+						</tbody>
+					</table>
+		
+					<button> Ajouter </button>
+		
+				</form>
+
 			</div>
 
+
+
 			<div>
-				<input type = "radio" name = "choixModification">
+				<input type = "radio" name = "choixModification" id = "supprimerRecette" onclick = "choixModifRecettesAction ( event, 1 )">
 	
 				<label> Supprimer une recette </label>
+
+
+
+				<form id = 'formSupprimerRecette'></form>
 			</div>
 
+
+
 			<div>
-				<input type = "radio" name = "choixModification">
+				<input type = "radio" name = "choixModification" id = "modifierRecette" onclick = "choixModifRecettesAction ( event, 2 )">
 	
 				<label> Modifier une recette </label>
+
+
+
+				<form id = 'formModifierRecette'></form>
 			</div>
 		</div>
-
-
-
-		<!-- --------------------- -->
-		<!--    AJOUTER RECETTE    -->
-		<!-- --------------------- -->
-
-		<form>
-
-			<div>
-				<label> Nom de la recette </label>
-				<input type = 'text'>
-			</div>
-
-
-			<div>
-				<label> Catégorie de la recette </label>
-
-				<select name = "categorie" id = "catRecette">
-					<option value = "soupe"                             > Soupe   </option>
-					<option value = "entrée"                            > Entrée  </option>
-					<option value = "plat"                              > Plat    </option>
-					<option value = "dessert"                           > Dessert </option>
-					<option value = "autre"  onclick = "newCatRecette()"> Autre   </option>
-				</select>
-			</div>
-
-
-			<table>
-				<thead>
-					<th>
-						<tr> Nom ingrédient    </tr>
-						<tr> Quantité          </tr>
-						<tr> Commentaire       </tr>
-						<tr> Suppression ligne </tr>
-					</th>
-				</thead>
-
-				<tbody>
-				</tbody>
-			</table>
-
-		</form>
 
 
 

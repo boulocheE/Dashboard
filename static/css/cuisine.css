@@ -85,3 +85,11 @@ input[type = "radio"]:checked {
 /* CHOIX DES SECTIONS */
 
 div#modificationRecettes { display : none; }
+
+
+
+form#formSupprimerRecette, form#formModifierRecette { display : none; }
+
+
+
+/*  */

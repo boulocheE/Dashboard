@@ -2,12 +2,13 @@
 <html lang = 'fr'>
 
 	<head>
-		<title> Recettes </title>
+		<title> Dashboard </title>
 
 		<meta charset = 'utf-8'>
 		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
 
-		<link rel = 'stylesheet' href = "{{ url_for('static', filename='index.css') }}" media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename='css/index.css') }}"     media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('planning') }}" media = 'all' type = 'text/css'>
 
 		<script src = "{{ url_for('static', filename='script.js') }}"></script>
 	</head>
@@ -23,13 +24,18 @@
 				<ul>
 					<li                 > <a href = "{{ url_for('index') }}"           > Dashboard           </a> </li>
 					<li                 > <a href = "{{ url_for('planning') }}"        > Planning            </a> </li>
-					<li                 > <a href = "{{ url_for('coursRessources') }}" > Cours et ressources </a> </li>
+					<li id = "choixPage"> <a href = "{{ url_for('coursRessources') }}" > Cours et ressources </a> </li>
 					<li                 > <a href = "{{ url_for('checkList') }}"       > Check list          </a> </li>
 					<li                 > <a href = "{{ url_for('sport') }}"           > Sport               </a> </li>
-					<li id = "choixPage"> <a href = "{{ url_for('recettes') }}"        > Recettes            </a> </li>
+					<li                 > <a href = "{{ url_for('recettes') }}"        > Recettes            </a> </li>
 				</ul>
 			</nav>
 		</header>
+
+
+		<section id = "pageAccueilCours">
+			<h2> Cours et ressources </h2>
+		</section>
 
 
 

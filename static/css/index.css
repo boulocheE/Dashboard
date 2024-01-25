@@ -11,7 +11,7 @@ body { background : #F2F4F4; }
 
 
 /* Navigation */
-nav {
+header nav {
 	width : 15%;
 	position : fixed;
 	top : 0;
@@ -23,12 +23,12 @@ nav {
 	background : linear-gradient( #005656, #007575 );
 }
 
-nav ul {
+header nav ul {
 	list-style : none;
 }
 
 
-nav li {
+header nav li {
 	font-weight: bold;
 
 	padding : 10% 0 10% 5%;
@@ -46,7 +46,10 @@ a {
 
 a:hover { font-style: italic; }
 
-nav ul::after { display : table; }
+header nav ul::after { display : table; }
+
+
+
 
 section, hgroup { margin-left : 15%; }
 

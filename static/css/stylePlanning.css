@@ -118,4 +118,7 @@ tbody { background-color: white; }
 
 h3 { color : #A2A3A3; }
 
-#calendrierJour { display : "none"; }
+#calendrierJour { display : none; }
+
+
+section#affichageJour { display : none; }

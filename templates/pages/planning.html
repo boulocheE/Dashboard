@@ -7,10 +7,10 @@
 		<meta charset = 'utf-8'>
 		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
 
-		<link rel = 'stylesheet' href = "{{ url_for('static', filename='index.css') }}"  media = 'all' type = 'text/css'>
-		<link rel = 'stylesheet' href = "stylePlanning.css" media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename = 'css/index.css') }}"  media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename = 'css/stylePlanning.css')}}" media = 'all' type = 'text/css'>
 
-		<script src = "scriptPlanning.js"></script>
+		<script src = "{{ url_for('static', filename = 'js/scriptPlanning.js')}}"></script>
 	</head>
 
 

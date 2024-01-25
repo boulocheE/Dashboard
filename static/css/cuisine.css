@@ -1,0 +1,87 @@
+body { margin : 1% 0 0 15%; }
+
+
+h1 { text-align: center; }
+
+div { margin : 2% 2% 2% 3%; }
+
+
+
+/* PARTIE MENU */
+div.page { margin-left: 10%; }
+
+div.page { width : 80%; }
+
+div.page nav {
+	width : 100%;
+
+	padding : 2% 0 2% 0;
+	margin : 1% 0 0 0;
+}
+
+
+div.page nav li.choix {
+	color : white;
+	background: #007575;
+	box-shadow: 0 0 1em #88888888;
+}
+
+div.page nav li {
+	float: left;
+
+	width : 15%;
+
+	list-style: none;
+
+	text-align: center;
+
+	padding : 1% 0 1% 0;
+
+	border : solid 1px #007575;
+	background : white;
+
+	margin-right : 2%;
+
+	border-top-right-radius : 5px;
+	border-top-left-radius  : 5px;
+}
+
+div.page hr {
+	width: 90%;
+
+	border : 0;
+	border-top : solid 1px #DBDBDB;
+}
+
+
+div.page li:hover { color : #007575; }
+
+
+
+/* BOUTONS RADIOS */
+
+input[type = "radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #88888888;
+	outline: none;
+	transition: 0.2s all linear;
+}
+
+input[type = "radio"] { border-radius : 50%; }
+
+div.boutons { margin-bottom : 1%; }
+
+input[type = "radio"]:checked {
+	border-color     : #007575;
+	background-color : #007575;
+}
+
+
+
+/* CHOIX DES SECTIONS */
+
+div#modificationRecettes { display : none; }

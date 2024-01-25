@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang = 'fr'>
+
+	<head>
+		<title> Recettes </title>
+
+		<meta charset = 'utf-8'>
+		<meta content = 'Author' lang = 'fr' name = 'BOULOCHE Eleonore'>
+
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename = 'css/index.css'  ) }}" media = 'all' type = 'text/css'>
+		<link rel = 'stylesheet' href = "{{ url_for('static', filename = 'css/cuisine.css') }}" media = 'all' type = 'text/css'>
+
+		<script src = "{{ url_for('static', filename = 'js/script.js'       ) }}"></script>
+		<script src = "{{ url_for('static', filename = 'js/scriptCuisine.js') }}"></script>
+	</head>
+
+
+	<body>
+
+		<header>
+			<!-- Trouver un logo pour le site -->
+
+			<!-- Menu du site -->
+			<nav>
+				<ul>
+					<li                 > <a href = "{{ url_for('index') }}"           > Dashboard           </a> </li>
+					<li                 > <a href = "{{ url_for('planning') }}"        > Planning            </a> </li>
+					<li                 > <a href = "{{ url_for('coursRessources') }}" > Cours et ressources </a> </li>
+					<li                 > <a href = "{{ url_for('checkList') }}"       > Check list          </a> </li>
+					<li                 > <a href = "{{ url_for('sport') }}"           > Sport               </a> </li>
+					<li id = "choixPage"> <a href = "{{ url_for('recettes') }}"        > Recettes            </a> </li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<h1> Cuisine </h1>
+
+
+		<div class = "page">
+			<nav>
+				<ul>
+					<li id = "menuV" class = "choix" onclick = "choixPage( event, 'modificationRecettes' , 'visualisationRecettes', 'menuM', 'menuV' )"> Visualiser </li>
+					<li id = "menuM"                 onclick = "choixPage( event, 'visualisationRecettes', 'modificationRecettes' , 'menuV', 'menuM' )"> Modifier   </li>
+				</ul>
+			</nav>
+
+			<hr>
+		</div>
+
+
+
+		<div id = "visualisationRecettes">
+			<div>
+				<input type = "radio" name = "choixVisualisation" checked>
+	
+				<label> Sélectionner les recettes </label>
+			</div>
+	
+	
+			<div>
+				<input type = "radio" name = "choixVisualisation">
+	
+				<label> Visualiser toutes les recettes </label>
+			</div>
+		</div>
+
+
+
+
+
+		<div id = "modificationRecettes">
+			<div>
+				<input type = "radio" name = "choixModification" checked>
+	
+				<label> Ajouter une recette </label>
+			</div>
+
+			<div>
+				<input type = "radio" name = "choixModification">
+	
+				<label> Supprimer une recette </label>
+			</div>
+
+			<div>
+				<input type = "radio" name = "choixModification">
+	
+				<label> Modifier une recette </label>
+			</div>
+		</div>
+
+
+
+		<!-- --------------------- -->
+		<!--    AJOUTER RECETTE    -->
+		<!-- --------------------- -->
+
+		<form>
+
+			<div>
+				<label> Nom de la recette </label>
+				<input type = 'text'>
+			</div>
+
+
+			<div>
+				<label> Catégorie de la recette </label>
+
+				<select name = "categorie" id = "catRecette">
+					<option value = "soupe"                             > Soupe   </option>
+					<option value = "entrée"                            > Entrée  </option>
+					<option value = "plat"                              > Plat    </option>
+					<option value = "dessert"                           > Dessert </option>
+					<option value = "autre"  onclick = "newCatRecette()"> Autre   </option>
+				</select>
+			</div>
+
+
+			<table>
+				<thead>
+					<th>
+						<tr> Nom ingrédient    </tr>
+						<tr> Quantité          </tr>
+						<tr> Commentaire       </tr>
+						<tr> Suppression ligne </tr>
+					</th>
+				</thead>
+
+				<tbody>
+				</tbody>
+			</table>
+
+		</form>
+
+
+
+	</body>
+
+</html>

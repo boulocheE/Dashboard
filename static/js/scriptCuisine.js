@@ -23,3 +23,30 @@ function choixModifRecettesAction(event, id) {
 		if ( cpt != id )
 			document.getElementById(tabIdFormulaires[cpt]).style.display = 'none';
 }
+
+
+
+function supprimerLigne(event) {
+	const bouton = event.target;
+	const ligneASupprimer = bouton.parentNode.parentNode;
+
+	ligneASupprimer.remove();
+}
+
+
+function ajouterLigne() {
+	const table = document.getElementById("tableAjoutIngr").getElementsByTagName('tbody')[0];
+	const nouvelleLigne = table.insertRow(-1);
+
+	for ( let cpt = 0; cpt < 3; cpt ++ )
+		nouvelleLigne.insertCell(cpt).innerHTML = "<input type = \"text\"></input>";
+
+	nouvelleLigne.insertCell(3).innerHTML = "<input type = \"button\" onclick = \"supprimerLigne(event)\" value = \"Supprimer\">";
+}
+
+
+
+function newCatRecette () {
+	const label = document.getElementById("newCatRecette");
+	label.style.display = "bloc";
+}

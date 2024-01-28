@@ -94,8 +94,8 @@
 						<label> Nom de la recette </label>
 						<input type = 'text'>
 					</div>
-		
-		
+
+
 					<div>
 						<label> Catégorie de la recette </label>
 		
@@ -106,10 +106,12 @@
 							<option value = "dessert"                           > Dessert </option>
 							<option value = "autre"  onclick = "newCatRecette()"> Autre   </option>
 						</select>
+
+						<input type = "text" id = "newCatRecette">
 					</div>
-		
-		
-					<table>
+
+
+					<table id = "tableAjoutIngr">
 						<thead>
 							<tr>
 								<th> Nom ingrédient    </th>
@@ -124,13 +126,13 @@
 								<td> <input type = "text"> </td>
 								<td> <input type = "text"> </td>
 								<td> <input type = "text"> </td>
-								<td> <button> Supprimer </button> </td>
+								<td> <input type = "button" onclick = "supprimerLigne(event)" value = "Supprimer"> </td>
 							</tr>
 						</tbody>
 					</table>
-		
-					<button> Ajouter </button>
-		
+
+					<input type = "button" onclick = "ajouterLigne(event)" value = "Ajouter">
+
 				</form>
 
 			</div>
@@ -139,7 +141,7 @@
 
 			<div>
 				<input type = "radio" name = "choixModification" id = "supprimerRecette" onclick = "choixModifRecettesAction ( event, 1 )">
-	
+
 				<label> Supprimer une recette </label>
 
 

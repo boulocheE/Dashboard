@@ -3,7 +3,7 @@ import pymongo
 
 
 # Remplacez "nom_de_la_base_de_donnees" par le nom de votre base de données MongoDB
-client = pymongo.MongoClient("mongodb+srv://boulocheeleonore28:testMdp159357@cluster0.jafpaxg.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://boulocheeleonore28:mdp@cluster0.jafpaxg.mongodb.net/?retryWrites=true&w=majority")
 db     = client["Dashboard"]
 
 

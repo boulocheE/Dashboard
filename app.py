@@ -35,5 +35,31 @@ def sport() :
 
 
 
+
+@app.route('/ajoutRecette', methods = ['POST'])
+def ajoutRecette() :
+	
+
+
+	if 'text' in request.form:
+		text = request.form['text']
+
+		if len(text.split()) <= 3 :
+			return render_template('pages/text.html', erreur = "Your text must contain at least 4 words. Try again.")
+
+		if len(text.split()) > 100 :
+			return render_template('pages/text.html', erreur = "Your text must contain less than 100 words. Try again.")
+
+
+		res = main(text)
+
+
+		return render_template('pages/text.html', resultat = res)
+
+	return render_template( 'pages/text.html', erreur = "Failure in the sending process. Try again." )
+
+
+
+
 if __name__ == '__main__':
 	app.run(debug=True)
